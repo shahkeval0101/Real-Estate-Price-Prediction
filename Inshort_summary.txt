@@ -1,0 +1,119 @@
+Visualizing whole project
+
+Real Estate Price Prediction
+Initially import numpy, pandas, matplotlib
+numpy was to do mathematical calculation
+pandas was to work with dataset
+matplotlib was to work with graphs, histogram that we have plotted
+
+Import the dataset(Dataset from uci)
+
+Then see and play with dataset like head(), tail(), shape, describe(), info()
+info will tell about non null values, datatypes of the columns
+describe =count, mean, std, percentiles 25, 50, 75, min , max
+
+
+Then to visualize the distribution of single numerical variable we drew histograms
+Plot the histograms to see the relations
+arguments were 
+figsize was in inches that is wight into height
+bins = No of bins to be created
+
+Splitting the dataset 
+train_test_split = 80/20 ratio and random state
+
+Fear of taking all same values and having no variety so using stratified sampling
+arguments = n_splits = number of reshuffling and splitting iteration
+test_size = no of values in test_set i.e ratio
+random state
+
+
+then split function is used to generate the indices to split data into training and test set
+args = housing which is dataset
+target variable on which stratification is done based on the y labels
+This will give us test_set and train_set that has variety of labels
+
+then we plot the correlation matrix on training data that we have made.
+Also we have sorted on particular column to get better visibility
+if its positive than it will impact the value positively i.e increase with increase
+if its negative than it will impact the value negatively i.e decrease with decrease
+
+
+Plot those with matplotlib
+
+
+After this we have tried to make combinations of dataset so that we can make model more good this is optional
+
+
+Then we made X_train, y_train
+
+
+now we need to feature scaling with StandardScalar and filling missing values with imputer
+i.e we will make a pipeline
+
+doubt = imputer, standard scalar, pipeline, fit, transform, fit_transform
+
+For missing values we use imputer
+dataset can have nans, blanks or other placeholder to remove them and fit with the known data we use simpleimputer
+This is done because do not understand nans or blanks so we need to do its
+
+simpleImputer = calculates missing value with strategy and then puts in that column
+it has two methods to do it:
+fit method calculates mean/median based on the strategy
+transform method replaces this missing value
+This is only in case of SimpleImputer
+
+
+For standardScalar
+Feature scaling is a technique to standardize the independent features present in the data to fix range. It is performed during data preprocessing step to handle varying magnitudes, units or values. if feature scaling is not done then machine learning algo tends to weigh greater values higher and smaller values lower regardless of units and values
+For eg:it will treat 3000m higher than 5km that's actually not true so it can give wrong predictions
+so feature scaling needs to be done
+
+fit method calculates : mean and sigma 
+This is will help to calculate for train_Set, test_Set, and any real time coming values
+transform  applies transforamtion to any dataset
+
+
+Pipeine:
+There are many moving parts in ml model that have to be tied together for an ml model to execute and produce results successfully.
+This process of tying together different pieces of the ml process is called pipelining
+
+
+
+start applying model
+test on train data it should not overfit
+test on test data 
+
+accuracy
+rmse
+cross validation
+
+
+
+
+
+
+
+
+Steps for ml 
+import lib
+import dataset
+see some visulization on dataset(like histogram)
+split dataset
+stratifiedsampling on dataset(strat train, strat test) 
+pipeline(imputation, feature scaling)
+x_train from pipeline
+y_train from original dataset
+x_test from strat test=> pipeline
+y_test from strat test
+train on that xtrain ytrain
+check for rmse on that
+
+test the model
+x_test, y_Test
+
+
+
+
+
+
